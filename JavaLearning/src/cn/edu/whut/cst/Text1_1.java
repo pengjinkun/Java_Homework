@@ -7,6 +7,8 @@ public class Text1_1 {
 //        Picture pic = new Picture();
         Circle aNewCircle=new Circle();
         aNewCircle.makeVisible();
+        aNewCircle.changeSize(60);
+        aNewCircle.moveHorizontal(100);
         Square aNewSquare=new Square();
         aNewSquare.makeVisible();
         aNewCircle.changeColor("red");
