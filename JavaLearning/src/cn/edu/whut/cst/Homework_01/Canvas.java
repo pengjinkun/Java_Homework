@@ -1,4 +1,4 @@
-package cn.edu.whut.cst;
+package cn.edu.whut.cst.Homework_01;
 
 import javax.swing.*;
 import java.awt.*;
@@ -58,6 +58,12 @@ public class Canvas
     private Canvas(String title, int width, int height, Color bgColour)
     {
         frame = new JFrame();
+//        frame.addWindowListener(new WindowAdapter() {
+//            @Override
+//            public void windowClosing(WindowEvent e) {
+//                System.exit(0);
+//            }
+//        });
         frame.setContentPane(canvas);
         frame.setTitle(title);
         canvas.setPreferredSize(new Dimension(width, height));
@@ -217,6 +223,7 @@ public class Canvas
         {
             setForegroundColor(colorString);
             graphic.fill(shape);
+
         }
     }
 

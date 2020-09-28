@@ -1,7 +1,9 @@
-package cn.edu.whut.cst;
+package cn.edu.whut.cst.Homework_01;
+
+import cn.edu.whut.cst.Homework_01.Circle;
 
 public class Text1_2 {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args)  {
         Circle aNewCircle=new Circle();
         //两次调用makeInvisible()方法后依然不会显示界面
 //        aNewCircle.makeInvisible();

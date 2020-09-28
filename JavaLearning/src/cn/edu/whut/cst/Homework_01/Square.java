@@ -1,4 +1,6 @@
-package cn.edu.whut.cst;
+package cn.edu.whut.cst.Homework_01;
+
+import cn.edu.whut.cst.Homework_01.Canvas;
 
 import java.awt.*;
 
@@ -173,7 +175,7 @@ public class Square
     private void draw()
     {
         if(isVisible) {
-            Canvas canvas = Canvas.getCanvas();
+            cn.edu.whut.cst.Homework_01.Canvas canvas = cn.edu.whut.cst.Homework_01.Canvas.getCanvas();
             canvas.draw(this, color,
                     new Rectangle(xPosition, yPosition, size, size));
             canvas.wait(10);
@@ -186,7 +188,7 @@ public class Square
     private void erase()
     {
         if(isVisible) {
-            Canvas canvas = Canvas.getCanvas();
+            cn.edu.whut.cst.Homework_01.Canvas canvas = Canvas.getCanvas();
             canvas.erase(this);
         }
     }

@@ -1,38 +1,40 @@
-package cn.edu.whut.cst;
+package cn.edu.whut.cst.Homework_01;
 
+import cn.edu.whut.cst.Homework_01.Canvas;
 
 import java.awt.*;
-import java.awt.geom.*;
 
 /*
- * A circle that can be manipulated and that draws itself on a canvas.
+ * A triangle that can be manipulated and that draws itself on a canvas.
  *
  * @author  Michael Kölling and David J. Barnes
  * @version 1.0  (15 July 2000)
  */
 
-public class Circle
+public class Triangle
 {
-    private int diameter;
+    private int height;
+    private int width;
     private int xPosition;
     private int yPosition;
-    private String color;//用Color Class不香吗
+    private String color;
     private boolean isVisible;
 
     /*
-     * Create a new circle at default position with default color.
+     * Create a new triangle at default position with default color.
      */
-    public Circle()
+    public Triangle()
     {
-        diameter = 30;
-        xPosition = 20;
-        yPosition = 60;
-        color = "blue";
+        height = 30;
+        width = 40;
+        xPosition = 50;
+        yPosition = 15;
+        color = "green";
         isVisible = false;
     }
 
     /*
-     * Make this circle visible. If it was already visible, do nothing.
+     * Make this triangle visible. If it was already visible, do nothing.
      */
     public void makeVisible()
     {
@@ -41,7 +43,7 @@ public class Circle
     }
 
     /*
-     * Make this circle invisible. If it was already invisible, do nothing.
+     * Make this triangle invisible. If it was already invisible, do nothing.
      */
     public void makeInvisible()
     {
@@ -50,7 +52,7 @@ public class Circle
     }
 
     /*
-     * Move the circle a few pixels to the right.
+     * Move the triangle a few pixels to the right.
      */
     public void moveRight()
     {
@@ -58,7 +60,7 @@ public class Circle
     }
 
     /*
-     * Move the circle a few pixels to the left.
+     * Move the triangle a few pixels to the left.
      */
     public void moveLeft()
     {
@@ -66,7 +68,7 @@ public class Circle
     }
 
     /*
-     * Move the circle a few pixels up.
+     * Move the triangle a few pixels up.
      */
     public void moveUp()
     {
@@ -74,7 +76,7 @@ public class Circle
     }
 
     /*
-     * Move the circle a few pixels down.
+     * Move the triangle a few pixels down.
      */
     public void moveDown()
     {
@@ -82,7 +84,7 @@ public class Circle
     }
 
     /*
-     * Move the circle horizontally by 'distance' pixels.
+     * Move the triangle horizontally by 'distance' pixels.
      */
     public void moveHorizontal(int distance)
     {
@@ -92,7 +94,7 @@ public class Circle
     }
 
     /*
-     * Move the circle vertically by 'distance' pixels.
+     * Move the triangle vertically by 'distance' pixels.
      */
     public void moveVertical(int distance)
     {
@@ -102,7 +104,7 @@ public class Circle
     }
 
     /*
-     * Slowly move the circle horizontally by 'distance' pixels.
+     * Slowly move the triangle horizontally by 'distance' pixels.
      */
     public void slowMoveHorizontal(int distance)
     {
@@ -126,7 +128,7 @@ public class Circle
     }
 
     /*
-     * Slowly move the circle vertically by 'distance' pixels.
+     * Slowly move the triangle vertically by 'distance' pixels.
      */
     public void slowMoveVertical(int distance)
     {
@@ -152,10 +154,11 @@ public class Circle
     /*
      * Change the size to the new size (in pixels). Size must be >= 0.
      */
-    public void changeSize(int newDiameter)
+    public void changeSize(int newHeight, int newWidth)
     {
         erase();
-        diameter = newDiameter;
+        height = newHeight;
+        width = newWidth;
         draw();
     }
 
@@ -170,25 +173,26 @@ public class Circle
     }
 
     /*
-     * Draw the circle with current specifications on screen.
+     * Draw the triangle with current specifications on screen.
      */
     private void draw()
     {
         if(isVisible) {
-            Canvas canvas = Canvas.getCanvas();
-            canvas.draw(this, color, new Ellipse2D.Double(xPosition, yPosition,
-                    diameter, diameter));
+            cn.edu.whut.cst.Homework_01.Canvas canvas = cn.edu.whut.cst.Homework_01.Canvas.getCanvas();
+            int[] xpoints = { xPosition, xPosition + (width/2), xPosition - (width/2) };
+            int[] ypoints = { yPosition, yPosition + height, yPosition + height };
+            canvas.draw(this, color, new Polygon(xpoints, ypoints, 3));
             canvas.wait(10);
         }
     }
 
     /*
-     * Erase the circle on screen.
+     * Erase the triangle on screen.
      */
     private void erase()
     {
         if(isVisible) {
-            Canvas canvas = Canvas.getCanvas();
+            cn.edu.whut.cst.Homework_01.Canvas canvas = Canvas.getCanvas();
             canvas.erase(this);
         }
     }

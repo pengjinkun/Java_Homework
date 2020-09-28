@@ -1,9 +1,10 @@
-package cn.edu.whut.cst;
+package cn.edu.whut.cst.Homework_01;
 
-import java.awt.*;
+import cn.edu.whut.cst.Homework_01.Circle;
+import cn.edu.whut.cst.Homework_01.Square;
 
 public class Text1_1 {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args)  {
 //        Picture pic = new Picture();
         Circle aNewCircle=new Circle();
         aNewCircle.makeVisible();

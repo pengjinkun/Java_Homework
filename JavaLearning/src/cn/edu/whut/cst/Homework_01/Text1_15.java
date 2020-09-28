@@ -1,6 +1,6 @@
-package cn.edu.whut.cst;
+package cn.edu.whut.cst.Homework_01;
 
-public class Text1_16
+public class Text1_15
 {
     private Square wall;
     private Square window;
@@ -27,7 +27,7 @@ public class Text1_16
     /*
      * Constructor for objects of class Picture
      */
-    public Text1_16()
+    public Text1_15()
     {
         // nothing to do... instance variables are automatically set to null
     }
@@ -36,7 +36,7 @@ public class Text1_16
      * Draw this picture.
      */
 
-    public void draw() throws InterruptedException {
+    public void draw() {
         wall = new Square();
         wall.moveVertical(80);
         wall.changeSize(100);
@@ -60,7 +60,16 @@ public class Text1_16
         sun.moveVertical(-10);
         sun.changeSize(60);
         sun.makeVisible();
-        Thread.sleep(3000);
+        sun.slowMoveVertical(100);
+
+
+
+
+//        for (int i = 0; i < 100; i++) {
+//            Thread.sleep(100);
+//            sun.slowMoveVertical(1);
+//            sun.slowMoveHorizontal(1);
+//        }
 
 
     }
@@ -92,18 +101,10 @@ public class Text1_16
             sun.changeColor("yellow");
         }
     }
-    public void sunSet() throws InterruptedException {
-        for (int i = 0; i < 100; i++) {
-            Thread.sleep(100);
-            sun.slowMoveVertical(1);
-            sun.slowMoveHorizontal(1);
-        }
-    }
 
     public static void main(String[] args) throws InterruptedException {
-        Text1_16 picture = new Text1_16();
-        picture.draw();//太阳先悬挂三秒然后再下降
-        picture.sunSet();
+        Text1_15 picture = new Text1_15();
+        picture.draw();
     }
 
 }

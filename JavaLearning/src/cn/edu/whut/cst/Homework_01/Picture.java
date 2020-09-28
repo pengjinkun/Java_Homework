@@ -1,6 +1,17 @@
-package cn.edu.whut.cst;
+package cn.edu.whut.cst.Homework_01;
 
-public class Text1_15
+/*
+ * This class represents a simple picture. You can draw the picture using
+ * the draw method. But wait, there's more: being an electronic picture, it
+ * can be changed. You can set it to black-and-white display and back to
+ * colors (only after it's been drawn, of course).
+ *
+ * This class was written as an early example for teaching Java with BlueJ.
+ *
+ * @author  Michael Kölling and David J. Barnes
+ * @version 1.1  (24 May 2001)
+ */
+public class Picture
 {
     private Square wall;
     private Square window;
@@ -27,7 +38,7 @@ public class Text1_15
     /*
      * Constructor for objects of class Picture
      */
-    public Text1_15()
+    public Picture()
     {
         // nothing to do... instance variables are automatically set to null
     }
@@ -36,7 +47,8 @@ public class Text1_15
      * Draw this picture.
      */
 
-    public void draw() throws InterruptedException {
+    public void draw()
+    {
         wall = new Square();
         wall.moveVertical(80);
         wall.changeSize(100);
@@ -59,14 +71,9 @@ public class Text1_15
         sun.moveHorizontal(180);
         sun.moveVertical(-10);
         sun.changeSize(60);
+        sun.slowMoveVertical(100);
+
         sun.makeVisible();
-        for (int i = 0; i < 100; i++) {
-            Thread.sleep(100);
-            sun.slowMoveVertical(1);
-            sun.slowMoveHorizontal(1);
-        }
-
-
     }
 
     /*
@@ -97,8 +104,8 @@ public class Text1_15
         }
     }
 
-    public static void main(String[] args) throws InterruptedException {
-        Text1_15 picture = new Text1_15();
+    public static void main(String[] args) {
+        Picture picture = new Picture();
         picture.draw();
     }
 
